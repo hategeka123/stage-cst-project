@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+        {% block content %}
+        <h4>books</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>project title</th>
+                    <th>project file</th>
+                    <th>Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.project_title}}</td>
+                    <td>{{ book.project_description}}</td>
+                    <td>
+                        <a href="{{ book.project_file}}" class="btn btn-primary btn-sn">Download</a>
+                    </td>
+                
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+        {% endblock %}
+   
